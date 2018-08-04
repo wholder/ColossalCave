@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="ColossalCave:jar">
+  <artifact type="jar" build-on-make="true" name="ColossalCave:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/ColossalCave_jar</output-path>
     <root id="archive" name="ColossalCave.jar">
       <element id="module-output" name="ColossalCave" />

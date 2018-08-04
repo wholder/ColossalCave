@@ -7,4 +7,7 @@ The purpose of my rewrite was to make the code more accessible for adaptation an
 
 **Caveat**: I tried to be as careful as possible while converting the code from C to Java, but it's easily possible that I may have broken something as part of my rewrite, so please don't rely on my code as a gospel when it comes to how Don Woods' version of Colossal Cave is expected to operate.  If you notice some odd behavior, please file an "Issue" in this GitHub archive and I'll try to check into it when I have a chance.
 
+### Requirements
+Java 8 JDK, or later must be installed in order to compile the code.  There is also a [**Runnable JAR file**](https://github.com/wholder/ColossalCave/tree/master/out/artifacts/ColossalCave_jar) included in the checked in code that you can download.   On a Mac, just double click the `ColossalCave.jar` file and it should start.  You should also be able to run the JAR file on Windows or Linux systems, but you'll need to have a Java 8 JRE, or later installed and follow the appropriate process for each needed to run an executable JAR file.
+
 Wayne
