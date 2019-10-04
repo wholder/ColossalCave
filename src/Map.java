@@ -34,7 +34,7 @@ public class Map {
       "Around you is a forest.  A small stream flows out of the building and " +
       "down a gully.",
       "You're at end of road again.",
-      5,
+      Adventure.LIGHT + Adventure.LIQUID,
       new int[][] {
         {  2,   2,   0},        // hill, road to loc 2 (hill in road)
         { 44,   2,   0},        // W to loc 2 (hill in road)
@@ -55,7 +55,7 @@ public class Map {
     new Room("You have walked up a hill, still in the forest.  The road slopes back " +      // Room 2
       "down the other side of the hill.  There is a building in the distance.",
       "You're at hill in road.",
-      1,
+      Adventure.LIGHT,
       new int[][] {
         {  2,   1,   0},        // hill, road
         { 12,   1,   0},        // building, house
@@ -68,7 +68,7 @@ public class Map {
         { 46,   5,   0}}),      // S to loc 5 (forest)
     new Room("You are inside a building, a well house for a large spring.",                  // Room 3
       "You're inside building.",
-      5,
+        Adventure.LIGHT + Adventure.LIQUID,
       new int[][] {
         {  3,   1,   0},        // enter
         { 11,   1,   0},        // exit, leave, out, outside
@@ -82,7 +82,7 @@ public class Map {
     new Room("You are in a valley in the forest beside a stream tumbling along a " +         // Room 4
       "rocky bed.",
       "You're in valley.",
-      5,
+        Adventure.LIGHT + Adventure.LIQUID,
       new int[][] {
         {  4,   1,   0},        // downstream, upstream
         { 12,   1,   0},        // building, house
@@ -97,7 +97,7 @@ public class Map {
         { 63,   8,   0}}),      // depression
     new Room("You are in open forest, with a deep valley to one side.",                      // Room 5
       "You're in forest.",
-      1,
+        Adventure.LIGHT,
       new int[][] {
         {  9,   4,   0},        // valley to loc 4 (valley)
         { 43,   4,   0},        // E to loc 4 (valley)
@@ -110,7 +110,7 @@ public class Map {
         { 46,   5,   0}}),      // S to loc 5 (forest)
     new Room("You are in open forest near both a valley and a road.",                        // Room 6
       "You're in forest.",
-      1,
+        Adventure.LIGHT,
       new int[][] {
         {  2,   1,   0},        // hill, road
         { 45,   1,   0},        // N to loc 1 (end of road again)
@@ -123,7 +123,7 @@ public class Map {
     new Room("At your feet all the water of the stream splashes into a 2-inch slit " +       // Room 7
       "in the rock.  Downstream the streambed is bare rock.",
       "You're at slit in streambed.",
-      5,
+        Adventure.LIGHT + Adventure.LIQUID,
       new int[][] {
         { 12,   1,   0},        // building, house
         {  4,   4,   0},        // downstream, upstream
@@ -142,7 +142,7 @@ public class Map {
       "dirt is a strong steel grate mounted in concrete. A dry streambed " +
       "leads into the depression.",
       "You're outside grate.",
-      1,
+        Adventure.LIGHT,
       new int[][] {
         {  6,   5,   0},        // forest
         { 43,   5,   0},        // E to loc 5 (forest)
@@ -159,7 +159,7 @@ public class Map {
     new Room("You are in a small chamber beneath a 3x3 steel grate to the surface.  " +      // Room 9
       "A low crawl over cobbles leads inward to the West.",
       "You're below the grate.",
-      1,
+        Adventure.LIGHT,
       new int[][] {
         { 11,   8, 303},        // exit, leave, out, outside
         { 29,   8, 303},        // Up to loc 8 (outside grate)
@@ -173,7 +173,7 @@ public class Map {
     new Room("You are crawling over cobbles in a low passage.  There is a dim light " +      // Room 10
       "at the east end of the passage.",
       "You're in cobble crawl.",
-      1,
+        Adventure.LIGHT,
       new int[][] {
         { 11,   9,   0},        // exit, leave, out, outside
         { 20,   9,   0},        // surface
@@ -189,7 +189,7 @@ public class Map {
       "and debris here, but an awkward canyon leads upward and west.  A note " +
       "on the wall says: Magic Word 'XYZZY'",
       "You're in debris room.",
-      0,
+        0,
       new int[][] {
         { 63,   8, 303},        // depression
         { 64,   9,   0},        // entrance
@@ -206,7 +206,7 @@ public class Map {
         { 31,  14,   0}}),      // pit
     new Room("You are in an awkward sloping east/west canyon.",                              // Room 12
       "You are in an awkward sloping east/west canyon.",
-      0,
+        0,
       new int[][] {
         { 63,   8, 303},        // depression
         { 64,   9,   0},        // entrance
@@ -221,7 +221,7 @@ public class Map {
       "rivers of orange stone.  An awkward canyon and a good passage exit " +
       "from east and west sides of the chamber.",
       "You're in bird chamber.",
-      0,
+        0,
       new int[][] {
         { 63,   8, 303},        // depression
         { 64,   9,   0},        // entrance
@@ -234,7 +234,7 @@ public class Map {
     new Room("At your feet is a small pit breathing traces of white mist. An east " +        // Room 14
       "passage ends here except for a small crack leading on.",
       "You're at top of small pit.",
-      0,
+        0,
       new int[][] {
         { 63,   8, 303},        // depression
         { 64,   9,   0},        // entrance
@@ -253,7 +253,7 @@ public class Map {
       "mist swaying to and fro almost as if alive.  A cold wind blows up the " +
       "staircase. There is a passage at the top of a dome behind you.",
       "You're in hall of mists.",
-      0,
+        0,
       new int[][] {
         { 36,  18,   0},        // left
         { 46,  18,   0},        // S to loc 18 (nugget of gold room)
@@ -273,13 +273,13 @@ public class Map {
         { 55,  34,   0}}),      // y2
     new Room("The crack is far too small for you to follow.",                                // Room 16
       "The crack is far too small for you to follow.",
-      2,
+      Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  14,   0}}),        // No move
     new Room("You are on the east bank of a fissure slicing clear across the hall.  " +      // Room 17
       "The mist is quite thick here, and the fissure is too wide to jump.",
       "You're on east bank of fissure.",
-      0,
+        0,
       new int[][] {
         { 38,  15,   0},        // hall
         { 43,  15,   0},        // E to loc 15 (hall of mists)
@@ -293,7 +293,7 @@ public class Map {
     new Room("This is a low room with a crude note on the wall.  The note says: " +         // Room 18
       "You won't get it up the steps.\n",
       "You're in nugget of gold room.",
-      0,
+        0,
       new int[][] {
         { 38,  15,   0},        // hall
         { 11,  15,   0},        // exit, leave, out, outside
@@ -301,7 +301,7 @@ public class Map {
     new Room("You are in the hall of the mountain king, with passages off in all " +         // Room 19
       "directions.",
       "You're in hall of mt. king.",
-      0,
+        0,
       new int[][] {
         { 10,  15,   0},        // stairs
         { 29,  15,   0},        // Up to loc 15 (hall of mists)
@@ -317,23 +317,23 @@ public class Map {
         { 66,  74,   0}}),      //
     new Room("You are at the bottom of the pit with a broken neck.",                         // Room 20
       "You are at the bottom of the pit with a broken neck.",
-      2,
+        Adventure.FORCED_MOVE,
       new int[][] {
         {  1,   0,   0}}),      // No move
     new Room("You didn't make it.",                                                          // Room 21
       "You didn't make it.",
-      2,
+        Adventure.FORCED_MOVE,
       new int[][] {
         {  1,   0,   0}}),      // No move
     new Room("The dome is unclimbable.",                                                     // Room 22
       "The dome is unclimbable.",
-      2,
+        Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  15,   0}}),      // No move
     new Room("You are at the west end of the twopit room.  There is a large hole in " +      // Room 23
       "the wall above the pit at this end of the room.",
       "You're at west end of twopit room.",
-      0,
+        0,
       new int[][] {
         { 43,  67,   0},        // E to loc 67 (east end of twopit room)
         { 42,  67,   0},        // across
@@ -345,14 +345,14 @@ public class Map {
     new Room("You are that the bottom of the eastern pit in the twopit room.  There " +      // Room 24
       "is a small pool of oil in one corner of the pit.",
       "You're in east pit.",
-      6,
+        Adventure.LIQUID + Adventure.IS_OIL,
       new int[][] {
         { 29,  67,   0},        // Up to loc 67 (east end of twopit room)
         { 11,  67,   0}}),      // exit, leave, out, outside
     new Room("You are at the bottom of the western pit in the towpit room. There is " +      // Room 25
       "a large hole in the wall about 25 feet above you.",
       "You're in west pit.",
-      0,
+        0,
       new int[][] {
         { 29,  23,   0},        // Up to loc 23 (west end of twopit room)
         { 11,  23,   0},        // exit, leave, out, outside
@@ -360,12 +360,12 @@ public class Map {
         { 56,  26,   0}}),      // climb
     new Room("You clamber up the plant and scurry through the hole at the top.",             // Room 26
       "You clamber up the plant and scurry through the hole at the top.",
-      2,
+        Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  88,   0}}),      //  No move
     new Room("You are on the west side of the fissure in the hall of mists.",                // Room 27
       "You are on the west side of the fissure in the hall of mists.",
-      0,
+        0,
       new int[][] {
         { 39, 596, 312},        // jump
         {  7,  21, 412},        // forward, onward
@@ -380,7 +380,7 @@ public class Map {
       "down to an E/W passage.",
       "You are in a low N/S passage at a hole in the floor.  The hole goes " +
         "down to an E/W passage.",
-      0,
+        0,
       new int[][] {
         { 38,  19,   0},        // hall
         { 11,  19,   0},        // exit, leave, out, outside
@@ -391,7 +391,7 @@ public class Map {
         { 52,  36,   0}}),      // hole
     new Room("You are in the south side chamber.",                                           // Room 29
       "You are in the south side chamber.",
-      0,
+        0,
       new int[][] {
         { 38,  19,   0},        // hall
         { 11,  19,   0},        // exit, leave, out, outside
@@ -399,8 +399,8 @@ public class Map {
     new Room("You are in the west side chamber of the hall of the mountain king.  A " +      // Room 30
       "passage continues west and up here.",
       "You are in the west side chamber of the hall of the mountain king.  A " +
-        "passage continues west and up here.",
-      0,
+      "passage continues west and up here.",
+        0,
       new int[][] {
         { 38,  19,   0},        // hall
         { 11,  19,   0},        // exit, leave, out, outside
@@ -409,20 +409,20 @@ public class Map {
         { 29,  62,   0}}),      // Up to loc 62 (crossover of a high N/S passage and a low E/W one)
     new Room(">$<",                                                                          // Room 31
       ">$<",
-      2,
+        Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  89, 524},        // No move
         {  1,  90,   0}}),      // No move
     new Room("You can't get by the snake.",                                                  // Room 32
       "You can't get by the snake.",
-      2,
+        Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  19,   0}}),      // No move
     new Room("You are in a large room, with a passage to the south, a passage to " +         // Room 33
       "the west, and a wall of broken rock to the east.  There is a large " +
       "'Y2' on a rock in the room's  center.",
       "You're at 'Y2'.",
-      0,
+        0,
       new int[][] {
         { 65,   3,   0},        // plugh
         { 46,  28,   0},        // S to loc 28 (low N/S passage at a hole in the floor)
@@ -434,7 +434,7 @@ public class Map {
         { 71, 100,   0}}),      // plover
     new Room("You are in a jumble of rock, with cracks everywhere.",                         // Room 34
       "You are in a jumble of rock, with cracks everywhere.",
-      0,
+        0,
       new int[][] {
         { 30,  33,   0},        // Dn to loc 33 ('Y2')
         { 55,  33,   0},        // y2
@@ -448,7 +448,7 @@ public class Map {
       "a lighted room.  A shadowy figure can be seen there peering back at " +
       "you.",
       "You're at window on pit.",
-      0,
+        0,
       new int[][] {
         { 43,  33,   0},        // E to loc 33 ('Y2')
         { 55,  33,   0},        // y2
@@ -456,7 +456,7 @@ public class Map {
     new Room("You are in a dirty broken passage.  To the east is a crawl.  To the " +        // Room 36
       "west is a large passage.  Above you is another passage.",
       "You're in dirty passage.",
-      0,
+        0,
       new int[][] {
         { 43,  37,   0},        // E to loc 37 (brink of a small clean climbable pit)
         { 17,  37,   0},        // crawl
@@ -467,8 +467,8 @@ public class Map {
     new Room("You are on the brink of a small clean climbable pit.  A crawl leads " +        // Room 37
       "west.",
       "You are on the brink of a small clean climbable pit.  A crawl leads " +
-        "west.",
-      0,
+      "west.",
+        0,
       new int[][] {
         { 44,  36,   0},        // W to loc 36 (dirty passage)
         { 17,  36,   0},        // crawl
@@ -479,7 +479,7 @@ public class Map {
       "enters and exits through tiny slits.",
       "You are in the bottom of a small pit with a little stream, which " +
         "enters and exits through tiny slits.",
-      4,
+        Adventure.LIQUID,
       new int[][] {
         { 56,  37,   0},        // climb
         { 29,  37,   0},        // Up to loc 37 (brink of a small clean climbable pit)
@@ -492,7 +492,7 @@ public class Map {
     new Room("You are in a large room full of dusty rocks.  There is a big hole in " +       // Room 39
       "the floor.  There are cracks everywhere, and a passage leading east.",
       "You're in dusty rock room.",
-      0,
+        0,
       new int[][] {
         { 43,  36,   0},        // E to loc 36 (dirty passage)
         { 23,  36,   0},        // passage, tunnel
@@ -504,14 +504,14 @@ public class Map {
       "north of the hall of mists.",
       "You have crawled through a very low wide passage parallel to and " +
         "north of the hall of mists.",
-      2,
+        Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  41,   0}}),      // No move
     new Room("You are at the west end of hall of mists.  A low wide crawl continues " +      // Room 41
       "west and another goes north.  To the south is a little passage 6 feet " +
       "off the floor.",
       "You're at west end of hall of mists.",
-      0,
+        0,
       new int[][] {
         { 46,  42,   0},        // S to loc 42 (maze of twisty little passages)
         { 29,  42,   0},        // Up to loc 42 (maze of twisty little passages)
@@ -523,7 +523,7 @@ public class Map {
         { 17,  60,   0}}),      // crawl
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 42
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 29,  41,   0},        // Up to loc 41 (west end of hall of mists)
         { 45,  42,   0},        // N to loc 42 (maze of twisty little passages)
@@ -532,14 +532,14 @@ public class Map {
         { 44,  80,   0}}),      // W to loc 80 (maze of twisty little passages)
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 43
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 44,  42,   0},        // W to loc 42 (maze of twisty little passages)
         { 46,  44,   0},        // S to loc 44 (maze of twisty little passages)
         { 43,  45,   0}}),      // E to loc 45 (maze of twisty little passages)
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 44
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 43,  43,   0},        // E to loc 43 (maze of twisty little passages)
         { 30,  48,   0},        // Dn to loc 48 (Dead end)
@@ -547,7 +547,7 @@ public class Map {
         { 45,  82,   0}}),      // N to loc 82 (Dead end)
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 45
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 44,  42,   0},        // W to loc 42 (maze of twisty little passages)
         { 45,  43,   0},        // N to loc 43 (maze of twisty little passages)
@@ -557,31 +557,31 @@ public class Map {
         { 30,  87,   0}}),      // Dn to loc 87 (maze of twisty little passages)
     new Room("Dead end",                                                                     // Room 46
       "Dead end.",
-      8,
+      Adventure.NOPIRAT,
       new int[][] {
         { 44,  45,   0},        // W to loc 45 (maze of twisty little passages)
         { 11,  45,   0}}),      // exit, leave, out, outside
     new Room("Dead end",                                                                     // Room 47
       "Dead end.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 43,  45,   0},        // E to loc 45 (maze of twisty little passages)
         { 11,  45,   0}}),      // exit, leave, out, outside
     new Room("Dead end",                                                                     // Room 48
       "Dead end.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 29,  44,   0},        // Up to loc 44 (maze of twisty little passages)
         { 11,  44,   0}}),      // exit, leave, out, outside
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 49
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 43,  50,   0},        // E to loc 50 (maze of twisty little passages)
         { 44,  51,   0}}),      // W to loc 51 (maze of twisty little passages)
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 50
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 43,  44,   0},        // E to loc 44 (maze of twisty little passages)
         { 44,  49,   0},        // W to loc 49 (maze of twisty little passages)
@@ -589,7 +589,7 @@ public class Map {
         { 46,  52,   0}}),       // S to loc 52 (maze of twisty little passages)
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 51
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 44,  49,   0},        // W to loc 49 (maze of twisty little passages)
         { 29,  50,   0},        // Up to loc 50 (maze of twisty little passages)
@@ -597,7 +597,7 @@ public class Map {
         { 46,  53,   0}}),      // S to loc 53 (maze of twisty little passages)
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 52
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 44,  50,   0},        // W to loc 50 (maze of twisty little passages)
         { 43,  51,   0},        // E to loc 51 (maze of twisty little passages)
@@ -607,20 +607,20 @@ public class Map {
         { 30,  86,   0}}),      // Dn to loc 86 (Dead end)
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 53
       "You are in a maze of twisty little passages, all alike.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 44,  51,   0},        // W to loc 51 (maze of twisty little passages)
         { 45,  52,   0},        // N to loc 52 (maze of twisty little passages)
         { 46,  54,   0}}),      // S to loc 54 (Dead end)
     new Room("Dead end",                                                                     // Room 54
       "Dead end.",
-      0,
+        0,
       new int[][] {
         { 44,  53,   0},        // W to loc 53 (maze of twisty little passages)
         { 11,  53,   0}}),      // exit, leave, out, outside
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 55
       "You are in a maze of twisty little passages, all alike.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 44,  52,   0},        // W to loc 52 (maze of twisty little passages)
         { 45,  55,   0},        // N to loc 55 (maze of twisty little passages)
@@ -628,7 +628,7 @@ public class Map {
         { 43,  57,   0}}),      // E to loc 57 (brink of pit)
     new Room("Dead end",                                                                     // Room 56
       "Dead end.",
-      0,
+        0,
       new int[][] {
         { 29,  55,   0},        // Up to loc 55 (maze of twisty little passages)
         { 11,  55,   0}}),      // exit, leave, out, outside
@@ -636,7 +636,7 @@ public class Map {
       "column down one wall.  You could climb down here but you could not " +
       "get back up.  The maze continues at this level.",
       "You're at brink of pit.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 30,  13,   0},        // Dn to loc 13 (bird chamber)
         { 56,  13,   0},        // climb
@@ -646,7 +646,7 @@ public class Map {
         { 43,  84,   0}}),      // E to loc 84 (maze of twisty little passages)
     new Room("Dead end",                                                                     // Room 58
       "Dead end.",
-      0,
+        0,
       new int[][] {
         { 43,  57,   0},        // E to loc 57 (brink of pit)
         { 11,  57,   0}}),      // exit, leave, out, outside
@@ -654,14 +654,14 @@ public class Map {
       "north of the hall of mists.",
       "You have crawled through a very low wide passage paralled to and " +
         "north of the hall of mists.",
-      2,
+      Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  27,   0}}),      // No move
     new Room("You are at the east end of a very long hall apparently without side " +        // Room 60
       "chambers.  To the east a low wide crawl slants up.  To the north a " +
       "round two foot hole slants down.",
       "You're at east end of long hall.",
-      0,
+        0,
       new int[][] {
         { 43,  41,   0},        // E to loc 41 (west end of hall of mists)
         { 29,  41,   0},        // Up to loc 41 (west end of hall of mists)
@@ -673,14 +673,14 @@ public class Map {
     new Room("You are at the west end of a very long featureless hall. The hall " +          // Room 61
       "joins up with a narrow north/south passage.",
       "You're at west end of long hall.",
-      0,
+        0,
       new int[][] {
         { 43,  60,   0},        // E to loc 60 (east end of long hall)
         { 45,  62,   0},        // N to loc 62 (crossover of a high N/S passage and a low E/W one)
         { 46, 107, 100}}),      // S to loc 107 (maze of twisty little passages)
     new Room("You are at a crossover of a high N/S passage and a low E/W one.",              // Room 62
       "You are at a crossover of a high N/S passage and a low E/W one.",
-      0,
+        0,
       new int[][] {
         { 44,  60,   0},        // W to loc 60 (east end of long hall)
         { 45,  63,   0},        // N to loc 63 (Dead end)
@@ -688,7 +688,7 @@ public class Map {
         { 46,  61,   0}}),      // S to loc 61 (west end of long hall)
     new Room("Dead end",                                                                     // Room 63
       "Dead end.",
-      0,
+        0,
       new int[][] {
         { 46,  62,   0},        // S to loc 62 (crossover of a high N/S passage and a low E/W one)
         { 11,  62,   0}}),      // exit, leave, out, outside
@@ -697,7 +697,7 @@ public class Map {
       "passage going west.  There is also a large room above.  The air is " +
       "damp here.",
       "You're at complex junction.",
-      0,
+        0,
       new int[][] {
         { 29,  39,   0},        // Up to loc 39 (dusty rock room)
         { 56,  39,   0},        // climb
@@ -711,7 +711,7 @@ public class Map {
       "To explore at random select north, south, up or down.",
       "You are in bedquilt, a long east/west passage with holes everywhere.  " +
         "To explore at random select north, south, up or down.",
-      0,
+        0,
       new int[][] {
         { 43,  64,   0},        // E to loc 64 (complex junction)
         { 44,  66,   0},        // W to loc 66 (swiss cheese room)
@@ -729,7 +729,7 @@ public class Map {
       "passages go west, east, ne, and nw.  Part of the room is occupied by " +
       "a large bedrock block.",
       "You're in swiss cheese room.",
-      0,
+        0,
       new int[][] {
         { 47,  65,   0},        // NE to loc 65 (You are in bedquilt)
         { 44,  67,   0},        // W to loc 67 (east end of twopit room)
@@ -744,7 +744,7 @@ public class Map {
       "from east and west. There are holes all over, but the only bit one is " +
       "on the wall directly over the west pit where you can't get at it.",
       "You're at east end of twopit room.",
-      0,
+        0,
       new int[][] {
         { 43,  66,   0},        // E to loc 66 (swiss cheese room)
         { 44,  23,   0},        // W to loc 23 (west end of twopit room)
@@ -757,7 +757,7 @@ public class Map {
       "small passages go north and south, and the south one quickly bends " +
       "west around the boulders.",
       "You're in slab room.",
-      0,
+        0,
       new int[][] {
         { 46,  23,   0},        // S to loc 23 (west end of twopit room)
         { 29,  69,   0},        // Up to loc 69 (secret N/S canyon above a large room)
@@ -765,7 +765,7 @@ public class Map {
         { 45,  65,   0}}),      // N to loc 65 (You are in bedquilt)
     new Room("You are in a secret N/S canyon above a large room.",                           // Room 69
       "You are in a secret N/S canyon above a large room.",
-      0,
+        0,
       new int[][] {
         { 30,  68,   0},        // Dn to loc 68 (slab room)
         { 61,  68,   0},        // slab
@@ -775,7 +775,7 @@ public class Map {
         { 75, 113,   0}}),      //
     new Room("You are in a secret N/S canyon above a sizable passage.",                      // Room 70
       "You are in a secret N/S canyon above a sizable passage.",
-      0,
+        0,
       new int[][] {
         { 45,  71,   0},        // N to loc 71 (junction of three secret canyons)
         { 30,  65,   0},        // Dn to loc 65 (You are in bedquilt)
@@ -785,14 +785,14 @@ public class Map {
       "north, south and se.  The north one is as tall as the other two " +
       "combined.",
       "You're at junction of three secret canyons.",
-      0,
+        0,
       new int[][] {
         { 48,  65,   0},       // SE to loc 65 (You are in bedquilt)
         { 46,  70,   0},       // S to loc 70 (secret N/S canyon above a sizable passage)
         { 45, 110,   0}}),     // N to loc 110 (window on pit)
     new Room("You are in a large low room.  Crawls lead north, se, and sw.",                 // Room 72
       "You are in a large low room.  Crawls lead north, se, and sw.",
-      0,
+        0,
       new int[][] {
         { 70,  65,   0},        // bedquilt
         { 49, 118,   0},        // SW to loc 118 (sloping corridor)
@@ -801,7 +801,7 @@ public class Map {
         { 72,  97,   0}}),      // oriental
     new Room("Dead end crawl.",                                                              // Room 73
       "Dead end crawl.",
-      0,
+        0,
       new int[][] {
         { 46,  72,   0},        // S to loc 72 (large low room)
         { 17,  72,   0},        // crawl
@@ -810,7 +810,7 @@ public class Map {
       "very tight canyon 15 feet below.  If you go down you may not be able " +
       "to get back up.",
       "You're at secret E/W canyon above tight canyon.",
-      0,
+        0,
       new int[][] {
         { 43,  19,   0},        // E to loc 19 (hall of mt)
         { 44, 120, 331},        // W to loc 120 (secret canyon which exits to the north and east)
@@ -824,14 +824,14 @@ public class Map {
         { 45,  77,   0}}),      // N to loc 77 (tall E/W canyon)
     new Room("The canyon here becomes too tight to go further south.",                       // Room 76
       "The canyon here becomes too tight to go further south.",
-      0,
+        0,
       new int[][] {
         { 45,  75,   0}}),      // N to loc 75 (wide place in a very tight N/S canyon)
     new Room("You are in a tall E/W canyon.  A low tight crawl goes 3 feet north " +         // Room 77
       "and seems to open up.",
       "You are in a tall E/W canyon.  A low tight crawl goes 3 feet north " +
-        "and seems to open up.",
-      0,
+      "and seems to open up.",
+        0,
       new int[][] {
         { 43,  75,   0},        // E to loc 75 (wide place in a very tight N/S canyon)
         { 44,  78,   0},        // W to loc 78 (The canyon runs into a mass of boulders -- dead end)
@@ -839,19 +839,19 @@ public class Map {
         { 17,  66,   0}}),      // crawl
     new Room("The canyon runs into a mass of boulders -- dead end.",                         // Room 78
       "The canyon runs into a mass of boulders -- dead end.",
-      0,
+        0,
       new int[][] {
         { 46,  77,   0}}),     // S to loc 77 (tall E/W canyon)
     new Room("The stream flows out through a pair of 1 foot diameter sewer pipes.  " +       // Room 79
       "It would be advisable to use the exit.",
       "The stream flows out through a pair of 1 foot diameter sewer pipes.  " +
         "It would be advisable to use the exit.",
-      2,
+      Adventure.FORCED_MOVE,
       new int[][] {
         {  1,   3,   0}}),      // No move
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 80
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 45,  42,   0},        // N to loc 42 (maze of twisty little passages)
         { 44,  80,   0},        // W to loc 80 (maze of twisty little passages)
@@ -859,45 +859,45 @@ public class Map {
         { 43,  81,   0}}),      // E to loc 81 (Dead end)
     new Room("Dead end.",                                                                    // Room 81
       "Dead end.",
-      0,
+        0,
       new int[][] {
         { 44,  80,   0},        // W to loc 80 (maze of twisty little passages)
         { 11,  80,   0}}),      // exit, leave, out, outside
     new Room("Dead end.",                                                                    // Room 82
       "Dead end.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 46,  44,   0},        // S to loc 44 (maze of twisty little passages)
         { 11,  44,   0}}),      // exit, leave, out, outside
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 83
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 46,  57,   0},        // S to loc 57 (brink of pit)
         { 43,  84,   0},        // E to loc 84 (maze of twisty little passages)
         { 44,  85,   0}}),      // W to loc 85 (Dead end)
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 84
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 45,  57,   0},        // N to loc 57 (brink of pit)
         { 44,  83,   0},        // W to loc 83 (maze of twisty little passages)
         { 50, 114,   0}}),      // NW to loc 114 (Dead end)
     new Room("Dead end.",                                                                    // Room 85
       "Dead end.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 43,  83,   0},        // E to loc 83 (maze of twisty little passages)
         { 11,  83,   0}}),      // exit, leave, out, outside
     new Room("Dead end.",                                                                    // Room 86
       "Dead end.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 29,  52,   0},        // Up to loc 52 (maze of twisty little passages)
         { 11,  52,   0}}),      // exit, leave, out, outside
     new Room("You are in a maze of twisty little passages, all alike.",                      // Room 87
       "You are in a maze of twisty little passages, all alike.",
-      0,
+        0,
       new int[][] {
         { 29,  45,   0},        // Up to loc 45 (maze of twisty little passages)
         { 30,  45,   0}}),      // Dn to loc 45 (maze of twisty little passages)
@@ -905,7 +905,7 @@ public class Map {
       "west.  At the eastern end is a hole through which you can see a " +
       "profusion of leaves,",
       "You're in narrow corridor.",
-      0,
+        0,
       new int[][] {
         { 30,  25,   0},        // Dn to loc 25 (west pit)
         { 56,  25,   0},        // climb
@@ -915,12 +915,12 @@ public class Map {
         { 27,  92,   0}}),      // giant
     new Room("There is nothing here to climb.  Use 'up' or 'out' to leave the pit.",         // Room 89
       "There is nothing here to climb.  Use 'up' or 'out' to leave the pit.",
-      2,
+      Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  25,   0}}),      // No move
     new Room("You have climbed up the plant and out of the pit.",                            // Room 90
       "You have climbed up the plant and out of the pit.",
-      2,
+        Adventure.FORCED_MOVE,
       new int[][] {
         {  1,  23,   0}}),      // No move
     new Room("You are at the top of a steep incline above a large room. You could " +        // Room 91
@@ -939,21 +939,21 @@ public class Map {
       "west wall is scrawled the inscription:\n              'Fee Fie Foe " +
       "Foo'       {sic}",
       "You're in giant room.",
-      0,
+        0,
       new int[][] {
         { 46,  88,   0},        // S to loc 88 (narrow corridor)
         { 43,  93,   0},        // E to loc 93 (The passage here is blocked by a recent cave-in)
         { 45,  94,   0}}),      // N to loc 94 (immense north/south passage)
     new Room("The passage here is blocked by a recent cave-in.",                             // Room 93
       "The passage here is blocked by a recent cave-in.",
-      0,
+        0,
       new int[][] {
         { 46,  92,   0},        // S to loc 92 (giant room)
         { 27,  92,   0},        // giant
         { 11,  92,   0}}),      // exit, leave, out, outside
     new Room("You are at one end of an immense north/south passage.",                        // Room 94
       "You are at one end of an immense north/south passage.",
-      0,
+        0,
       new int[][] {
         { 46,  92,   0},        // S to loc 92 (giant room)
         { 27,  92,   0},        // giant
@@ -966,7 +966,7 @@ public class Map {
       "over a sparkling waterfall into a roaring whirlpool which disappears " +
       "through a hole in the floor.  Passages exit to the south and west.",
       "You're in cavern with waterfall.",
-      4,
+      Adventure.LIQUID,
       new int[][] {
         { 46,  94,   0},        // S to loc 94 (immense north/south passage)
         { 11,  94,   0},        // exit, leave, out, outside
@@ -975,7 +975,7 @@ public class Map {
     new Room("You are in the soft room.  The walls are covered with heavy curtains, " +      // Room 96
       "the floor with a thick pile carpet. Moss covers the ceiling.",
       "You're in soft room.",
-      0,
+        0,
       new int[][] {
         { 44,  66,   0},        // W to loc 66 (swiss cheese room)
         { 11,  66,   0}}),      // exit, leave, out, outside
@@ -983,7 +983,7 @@ public class Map {
       "walls.  A gently sloping passage leads upward to the north, another " +
       "passage leads se, and a hands and knees crawl leads west.",
       "You're in oriental room.",
-      0,
+        0,
       new int[][] {
         { 48,  66,   0},        // SE to loc 66 (swiss cheese room)
         { 44,  72,   0},        // W to loc 72 (large low room)
@@ -996,7 +996,7 @@ public class Map {
       "noises can be heard.  The mist rises up through a fissure in the " +
       "ceiling.  The path exits to the south and west.",
       "You're in misty cavern.",
-      0,
+        0,
       new int[][] {
         { 46,  97,   0},        // S to loc 97 (oriental room)
         { 72,  97,   0},        // oriental
@@ -1005,7 +1005,7 @@ public class Map {
       "distance.  An extremely tight tunnel leads east.  It looks like a " +
       "very tight squeeze.  An eerie light can be seen at the other end.",
       "You're in alcove.",
-      0,
+        0,
       new int[][] {
         { 50,  98,   0},        // NW to loc 98 (misty cavern)
         { 73,  98,   0},        // cavern
@@ -1015,7 +1015,7 @@ public class Map {
     new Room("You're in a small chamber lit by an eerie green light.  An extremely " +       // Room 100
       "narrow tunnel exits to the west.  A dark corridor leads ne.",
       "You're in plover room.",
-      1,
+      Adventure.LIGHT,
       new int[][] {
         { 44, 301,   0},        // W to loc 301
         { 23, 301,   0},        // passage, tunnel
@@ -1027,7 +1027,7 @@ public class Map {
         { 22, 101,   0}}),      // dark
     new Room("You're in the dark-room.  A corridor leading south is the only exit.",         // Room 101
       "You're in dark-room.",
-      0,
+        0,
       new int[][] {
         { 46, 100,   0},        // S to loc 100 (plover room)
         { 71, 100,   0},        // plover
@@ -1036,7 +1036,7 @@ public class Map {
       "east from here, but is now blocked by debris.  The air smells of sea " +
       "water.",
       "You're in arched hall.",
-      0,
+        0,
       new int[][] {
         { 30, 103,   0},        // Dn to loc 103 (shell room)
         { 74, 103,   0},        //
@@ -1046,7 +1046,7 @@ public class Map {
       "shallow passage proceeds downward, and a somewhat steeper one leads " +
       "up.  A low hands and knees passage enters from the south.",
       "You're in shell room.",
-      0,
+        0,
       new int[][] {
         { 29, 102,   0},        // Up to loc 102 (arched hall)
         { 38, 102,   0},        // hall
@@ -1056,14 +1056,14 @@ public class Map {
         { 46,  64,   0}}),      // S to loc 64 (complex junction)
     new Room("You are in a long sloping corridor with ragged sharp walls.",                  // Room 104
       "You are in a long sloping corridor with ragged sharp walls.",
-      0,
+        0,
       new int[][] {
         { 29, 103,   0},        // Up to loc 103 (shell room)
         { 74, 103,   0},        //
         { 30, 105,   0}}),      // Dn to loc 105 (cul-de-sac about eight feet across)
     new Room("You are in a cul-de-sac about eight feet across.",                             // Room 105
       "You are in a cul-de-sac about eight feet across.",
-      0,
+        0,
       new int[][] {
         { 29, 104,   0},        // Up to loc 104 (long sloping corridor with ragged sharp walls)
         { 11, 104,   0},        // exit, leave, out, outside
@@ -1074,14 +1074,14 @@ public class Map {
       "this point.'\n              'Proceed at your own risk.'\n             " +
       "'Witt construction company'",
       "You're in anteroom.",
-      0,
+        0,
       new int[][] {
         { 29,  64,   0},        // Up to loc 64 (complex junction)
         { 44,  65,   0},        // W to loc 65 (You are in bedquilt)
         { 43, 108,   0}}),      // E to loc 108 (Witt's end)
     new Room("You are in a maze of twisty little passages, all different.",                  // Room 107
       "You are in a maze of twisty little passages, all different.",
-      0,
+        0,
       new int[][] {
         { 46, 131,   0},        // S to loc 131 (maze of twisting little passages)
         { 49, 132,   0},        // SW to loc 132 (little maze of twisty passages)
@@ -1095,7 +1095,7 @@ public class Map {
         { 30,  61,   0}}),      // Dn to loc 61 (west end of long hall)
     new Room("You are at Witt's end.  Passages lead off in ALL directions.",                 // Room 108
       "You're at Witt's end.",
-      0,
+        0,
       new int[][] {
         { 43, 556,  95},        // E to loc 556
         { 45, 556,  95},        // N to loc 556
@@ -1116,7 +1116,7 @@ public class Map {
       "for the use of the dwarves, who as you know, are extremely vain.)  A " +
       "small window can be seen in either wall, some fifty feet up.",
       "You're in mirror canyon.",
-      0,
+        0,
       new int[][] {
         { 46,  69,   0},        // S to loc 69 (secret N/S canyon above a large room)
         { 45, 113,   0},        // N to loc 113 (reservoir)
@@ -1129,7 +1129,7 @@ public class Map {
       "you and 25 feet away there is a similar window looking into a lighted " +
       "room.  A shadowy figure can be seen there peering back at you.",
       "You're at window on pit.",
-      0,
+        0,
       new int[][] {
         { 44,  71,   0},        // W to loc 71 (junction of three secret canyons)
         { 39,  20,   0}}),      // jump
@@ -1137,7 +1137,7 @@ public class Map {
       "below.  You could climb down it, and jump from it to the floor, but " +
       "having done so you would be unable to reach it to climb back up.",
       "You're at top of stalactite.",
-      0,
+        0,
       new int[][] {
         { 45,  70,   0},        // N to loc 70 (secret N/S canyon above a sizable passage)
         { 30,  50,  40},        // Dn to loc 50 (maze of twisty little passages)
@@ -1147,7 +1147,7 @@ public class Map {
         { 30,  45,   0}}),      // Dn to loc 45 (maze of twisty little passages)
     new Room("You are in a little maze of twisting passages, all different.",                // Room 112
       "You are in a little maze of twisting passages, all different.",
-      0,
+        0,
       new int[][] {
         { 49, 131,   0},        // SW to loc 131 (maze of twisting little passages)
         { 45, 132,   0},        // N to loc 132 (little maze of twisty passages)
@@ -1165,14 +1165,14 @@ public class Map {
       "10 feet overhead and splashes noisily into the water somewhere within " +
       "the mist. The only passage goes back toward the south.",
       "You're at reservoir.",
-      4,
+      Adventure.LIQUID,
       new int[][] {
         { 46, 109,   0},        // S to loc 109 (mirror canyon)
         { 11, 109,   0},        // exit, leave, out, outside
         {109, 109,   0}}),      //
     new Room("Dead end.",                                                                    // Room 114
       "Dead end.",
-      0,
+        0,
       new int[][] {
         { 48,  84,   0}}),     // SE to loc 84 (maze of twisty little passages)
     new Room("You are at the northeast end of an immense room, even larger than the " +      // Room 115
@@ -1188,7 +1188,7 @@ public class Map {
       "the room, where various other sundry objects can be glimpsed dimly in " +
       "the distance.",
       "You're at ne end of repository.",
-      1,
+      Adventure.LIGHT,
       new int[][] {
         { 49, 116,   0}}),      // SW to loc 116 (sw end of repository)
     new Room("You are at the southwest end of the repository.  To one side is a pit " +      // Room 116
@@ -1200,7 +1200,7 @@ public class Map {
       "steel grate, next to which is a sign which reads:\n     'Treasure " +
       "vault.  Keys in main office.'",
       "You're at sw end of repository.",
-      1,
+        Adventure.LIGHT,
       new int[][] {
         { 47, 115,   0},        // NE to loc 115 (ne end of repository)
         { 30, 593,   0}}),      // Dn to loc 593
@@ -1208,7 +1208,7 @@ public class Map {
       "up from below obscures all view of the far side.  A sw path leads " +
       "away from the chasm into a winding corridor.",
       "You're on sw side of chasm.",
-      0,
+        0,
       new int[][] {
         { 49, 118,   0},        // SW to loc 118 (sloping corridor)
         { 41, 660, 233},        // over
@@ -1222,7 +1222,7 @@ public class Map {
     new Room("You are in a long winding corridor sloping out of sight in both " +            // Room 118
       "directions.",
       "You're in sloping corridor.",
-      0,
+        0,
       new int[][] {
         { 30,  72,   0},        // Dn to loc 72 (large low room)
         { 29, 117,   0}}),      // Up to loc 117 (on sw side of chasm)
@@ -1236,13 +1236,13 @@ public class Map {
         {307,  65,   0}}),      //
     new Room("You are in a secret canyon which exits to the north and east.",                // Room 120
       "You are in a secret canyon which exits to the north and east.",
-      0,
+        0,
       new int[][] {
         { 45,  69,   0},        // N to loc 69 (secret N/S canyon above a large room)
         { 43,  74,   0}}),      // E to loc 74 (secret E/W canyon above tight canyon)
     new Room("You are in a secret canyon which exits to the north and east.",                // Room 121
       "You are in a secret canyon which exits to the north and east.",
-      0,
+       0,
       new int[][] {
         { 43,  74,   0},        // E to loc 74 (secret E/W canyon above tight canyon)
         { 11,  74,   0},        // exit, leave, out, outside
@@ -1251,7 +1251,7 @@ public class Map {
     new Room("You are on the far side of the chasm.  A ne path leads away from the " +       // Room 122
       "chasm on this side.",
       "You're on ne side of chasm.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 47, 123,   0},        // NE to loc 123 (corridor)
         { 41, 660, 233},        // over
@@ -1266,7 +1266,7 @@ public class Map {
     new Room("You're in a long east/west corridor.  A faint rumbling noise can be " +        // Room 123
       "heard in the distance.",
       "You're in corridor.",
-      8,
+      Adventure.NOPIRAT,
       new int[][] {
         { 44, 122,   0},        // W to loc 122 (on ne side of chasm)
         { 43, 124,   0},        // E to loc 124 (fork in path)
@@ -1278,7 +1278,7 @@ public class Map {
       "southeast down a gentle slope.  The main corridor enters from the " +
       "west.",
       "You're at fork in path.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 44, 123,   0},        // W to loc 123 (corridor)
         { 47, 125,   0},        // NE to loc 125 (junction with warm walls)
@@ -1292,7 +1292,7 @@ public class Map {
       "roar, so loud that the entire cave seems to be trembling.  Another " +
       "passage leads south, and a low crawl goes east.",
       "You're at junction with warm walls.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 46, 124,   0},        // S to loc 124 (fork in path)
         { 77, 124,   0},        // fork
@@ -1309,7 +1309,7 @@ public class Map {
       "are hot to the touch, and the thundering of the volcano drowns out " +
       "all other sounds.  A dark, foreboding passage exits to the south.",
       "You're at breath-taking view.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 46, 125,   0},        // S to loc 125 (junction with warm walls)
         { 23, 125,   0},        // passage, tunnel
@@ -1322,7 +1322,7 @@ public class Map {
       "heat.  The only exit is a crawl heading west, through which is coming " +
       "a low rumbling.",
       "You're in chamber of boulders.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 44, 125,   0},        // W to loc 125 (junction with warm walls)
         { 11, 125,   0},        // exit, leave, out, outside
@@ -1332,7 +1332,7 @@ public class Map {
     new Room("You are walking along a gently sloping north/south passage lined with " +      // Room 128
       "oddly shaped limestone formations.",
       "You're in limestone passage.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 45, 124,   0},        // N to loc 124 (fork in path)
         { 29, 124,   0},        // Up to loc 124 (fork in path)
@@ -1344,7 +1344,7 @@ public class Map {
     new Room("You are standing at the entrance to a large, barren room.  A sign " +          // Room 129
       "posted above the entrance reads:\n      'Caution!  Bear in room!'",
       "You're in front of barren room.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 44, 128,   0},        // W to loc 128 (limestone passage)
         { 29, 128,   0},        // Up to loc 128 (limestone passage)
@@ -1358,14 +1358,14 @@ public class Map {
       "empty except for some dust.  Marks in the dust lead away toward the " +
       "far end of the room. The only exit is the way you came in.",
       "You're in barren room.",
-      8,
+        Adventure.NOPIRAT,
       new int[][] {
         { 44, 129,   0},        // W to loc 129 (front of barren room)
         { 77, 124,   0},        // fork
         { 28, 126,   0}}),      // view
     new Room("You are in a maze of twisting little passages, all different.",                // Room 131
       "You are in a maze of twisting little passages, all different.",
-      0,
+        0,
       new int[][] {
         { 44, 107,   0},        // W to loc 107 (maze of twisty little passages)
         { 48, 132,   0},        // SE to loc 132 (little maze of twisty passages)
@@ -1379,7 +1379,7 @@ public class Map {
         { 43, 112,   0}}),      // E to loc 112 (little maze of twisting passages)
     new Room("You are in a little maze of twisty passages, all different.",                  // Room 132
       "You are in a little maze of twisty passages, all different.",
-      0,
+        0,
       new int[][] {
         { 50, 107,   0},        // NW to loc 107 (maze of twisty little passages)
         { 29, 131,   0},        // Up to loc 131 (maze of twisting little passages)
@@ -1393,7 +1393,7 @@ public class Map {
         { 48, 112,   0}}),      // SE to loc 112 (little maze of twisting passages)
     new Room("You are in a twisting maze of little passages, all different.",                // Room 133
       "You are in a twisting maze of little passages, all different.",
-      0,
+        0,
       new int[][] {
         { 29, 107,   0},        // Up to loc 107 (maze of twisty little passages)
         { 30, 131,   0},        // Dn to loc 131 (maze of twisting little passages)
@@ -1407,7 +1407,7 @@ public class Map {
         { 46, 112,   0}}),      // S to loc 112 (little maze of twisting passages)
     new Room("You are in a twisting little maze of passages, all different.",                // Room 134
       "You are in a twisting little maze of passages, all different.",
-      0,
+        0,
       new int[][] {
         { 47, 107,   0},        // NE to loc 107 (maze of twisty little passages)
         { 45, 131,   0},        // N to loc 131 (maze of twisting little passages)
@@ -1421,7 +1421,7 @@ public class Map {
         { 49, 112,   0}}),      // SW to loc 112 (little maze of twisting passages)
     new Room("You are in a twisty little maze of passages, all different.",                  // Room 135
       "You are in a twisty little maze of passages, all different.",
-      0,
+        0,
       new int[][] {
         { 45, 107,   0},        // N to loc 107 (maze of twisty little passages)
         { 48, 131,   0},        // SE to loc 131 (maze of twisting little passages)
@@ -1435,7 +1435,7 @@ public class Map {
         { 29, 112,   0}}),      // Up to loc 112 (little maze of twisting passages)
     new Room("You are in a twisty maze of little passages, all different.",                  // Room 136
       "You are in a twisty maze of little passages, all different.",
-      0,
+        0,
       new int[][] {
         { 43, 107,   0},        // E to loc 107 (maze of twisty little passages)
         { 44, 131,   0},        // W to loc 131 (maze of twisting little passages)
@@ -1449,7 +1449,7 @@ public class Map {
         { 45, 112,   0}}),      // N to loc 112 (little maze of twisting passages)
     new Room("You are in a little twisty maze of passages, all different.",                  // Room 137
       "You are in a little twisty maze of passages, all different.",
-      0,
+        0,
       new int[][] {
         { 48, 107,   0},        // SE to loc 107 (maze of twisty little passages)
         { 47, 131,   0},        // NE to loc 131 (maze of twisting little passages)
@@ -1463,7 +1463,7 @@ public class Map {
         { 44, 112,   0}}),      // W to loc 112 (little maze of twisting passages)
     new Room("You are in a maze of little twisting passages, all different.",                // Room 138
       "You are in a maze of little twisting passages, all different.",
-      0,
+        0,
       new int[][] {
         { 30, 107,   0},        // Dn to loc 107 (maze of twisty little passages)
         { 43, 131,   0},        // E to loc 131 (maze of twisting little passages)
@@ -1477,7 +1477,7 @@ public class Map {
         { 50, 112,   0}}),      // NW to loc 112 (little maze of twisting passages)
     new Room("You are in a maze of little twisty passages, all different.",                  // Room 139
       "You are in a maze of little twisty passages, all different.",
-      0,
+        0,
       new int[][] {
         { 49, 107,   0},        // SW to loc 107 (maze of twisty little passages)
         { 50, 131,   0},        // NW to loc 131 (maze of twisting little passages)
@@ -1491,7 +1491,7 @@ public class Map {
         { 47, 112,   0}}),      // NE to loc 112 (little maze of twisting passages)
     new Room("Dead end.",                                                                    // Room 140
       "Dead end.",
-      0,
+        0,
       new int[][] {
         { 45, 112,   0},        // N to loc 112 (little maze of twisting passages)
  //       { 78,   3,   0},        // qqq to Well house
