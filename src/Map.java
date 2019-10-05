@@ -468,7 +468,7 @@ public class Map {
         { 53,  34,   0},        // wall to loc 34 (jumble of rock)
         { 54,  34,   0},        // broken to loc 34 (jumble of rock)
         { 44,  35,   0},        // W to loc 35 (window on pit)
-        { 71, 302, 159},        // plover special move 302 (if carrying Egg-sized emerald)
+        { 71, 302, 159},        // plover special move 302 (if carrying Egg-sized emerald, drop emerald)
         { 71, 100,   0}}),      // plover to loc 100
     new Room("You are in a jumble of rock, with cracks everywhere.",                         // Room 34
       "You are in a jumble of rock, with cracks everywhere.",
@@ -1059,7 +1059,7 @@ public class Map {
         { 23, 301,   0},        // passage, tunnel special move 301
         { 11, 301,   0},        // exit, leave, out, outside special move 301
         { 44,  99,   0},        // W to loc 99 (alcove)
-        { 71, 302, 159},        // plover special move 302 (if carrying Egg-sized emerald)
+        { 71, 302, 159},        // plover special move 302 (if carrying Egg-sized emerald, drop emerald)
         { 71,  33,   0},        // plover
         { 47, 101,   0},        // NE to loc 101 (dark-room)
         { 22, 101,   0}}),      // dark
