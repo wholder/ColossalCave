@@ -57,7 +57,7 @@ public class Map {
      *              will move the player to location #2, which is the "hill in road".  However, the comments for
      *              each subarray only show moves that result from cardinal compass commands (N, S, E, W, NE, etc.)
      *              A subarray like "{13, 4, 0}" responds to the command word "gully" and moves the user to loc #4.
-     *              In addition, some destination values have additiona values added to them to encode other actions.
+     *              In addition, some destination values have additional values added to them to encode other actions.
      */
     Room (String longText, String shortText, int info, int[][] moves) {
       this.longText = longText;
